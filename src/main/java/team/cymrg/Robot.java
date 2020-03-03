@@ -6,98 +6,41 @@
 /*----------------------------------------------------------------------------*/
 
 package team.cymrg;
+import team.cymrg.subsystems.*;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
-/**
- * The VM is configured to automatically run this class, and to call the
- * methods corresponding to each mode, as described in the TimedRobot
- * documentation. If you change the name of this class or the package after
- * creating this project, you must also update the build.gradle file in the
- * project.
- */
 public class Robot extends TimedRobot
 {
     private RobotContainer robotContainer;
 
-    /**
-     * This method is run when the robot is first started up and should be used for any
-     * initialization code.
-     */
+    public static subsysDrivebase   subsysDrivebase     = null;
+    public static subsysElevator    subsysElevator      = null;
+    public static subsysIntake      subsysIntake        = null;
+    public static subsysShootgazin  subsysShootgazin    = null;
+
     @Override
     public void robotInit()
     {
-        // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
-        // autonomous chooser on the dashboard.
         robotContainer = new RobotContainer();
-    }
-
-    /**
-     * This method is called every robot packet, no matter the mode. Use this for items like
-     * diagnostics that you want ran during disabled, autonomous, teleoperated and test.
-     *
-     * <p>This runs after the mode specific periodic functions, but before
-     * LiveWindow and SmartDashboard integrated updating.
-     */
-    @Override
-    public void robotPeriodic()
-    {
-        // Runs the Scheduler.  This is responsible for polling buttons, adding newly-scheduled
-        // commands, running already-scheduled commands, removing finished or interrupted commands,
-        // and running subsystem periodic() methods.  This must be called from the robot's periodic
-        // block in order for anything in the Command-based framework to work.
-        CommandScheduler.getInstance().run();
-    }
-
-    /**
-     * This method is called once each time the robot enters Disabled mode.
-     */
-    @Override
-    public void disabledInit()
-    {
+        subsysDrivebase     = team.cymrg.subsystems.subsysDrivebase     .getInstance();
+        subsysElevator      = team.cymrg.subsystems.subsysElevator      .getInstance();
+        subsysIntake        = team.cymrg.subsystems.subsysIntake        .getInstance();
+        subsysShootgazin    = team.cymrg.subsystems.subsysShootgazin    .getInstance();
     }
 
     @Override
-    public void disabledPeriodic()
-    {
-    }
+    public void robotPeriodic() { CommandScheduler.getInstance().run(); }
+    @Override public void disabledInit() { }
+    @Override public void disabledPeriodic() { }
 
-    /**
-     * This autonomous runs the autonomous command selected by your {@link RobotContainer} class.
-     */
-    @Override
-    public void autonomousInit()
-    {
-    }
+    @Override public void autonomousInit() { }
+    @Override public void autonomousPeriodic() { }
 
-    /**
-     * This method is called periodically during autonomous.
-     */
-    @Override
-    public void autonomousPeriodic()
-    {
-    }
+    @Override public void teleopInit() { }
+    @Override public void teleopPeriodic() { }
 
-    @Override
-    public void teleopInit()
-    {
-    }
-
-    @Override
-    public void teleopPeriodic()
-    {
-    }
-
-    @Override
-    public void testInit()
-    {
-        // Cancels all running commands at the start of test mode.
-        CommandScheduler.getInstance().cancelAll();
-    }
-
-    @Override
-    public void testPeriodic()
-    {
-    }
+    @Override public void testInit() { CommandScheduler.getInstance().cancelAll(); }
+    @Override public void testPeriodic() { }
 }
