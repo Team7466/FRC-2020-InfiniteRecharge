@@ -1,10 +1,14 @@
 package team.cymrg.subsystems;
-
+import team.cymrg.Constants;
+import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.Compressor;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class subsysElevator extends SubsystemBase {
     private static subsysElevator INSTANCE;
+    Compressor airCompressor = new Compressor(1);
+    public static Solenoid solenoidElevator = new Solenoid(Constants.Systems.port_Solenoid);
 
     public static subsysElevator getInstance() {
         // Fast (non-synchronized) check to reduce overhead of acquiring a lock when it's not needed
@@ -21,18 +25,16 @@ public class subsysElevator extends SubsystemBase {
     }
 
     private subsysElevator() {
-        // TODO: Set the default command, if any, for this subsystem by calling setDefaultCommand(command)
-        //       in the constructor or in the robot coordination class, such as RobotContainer.
-        //       Also, you can call addChild(name, sendableChild) to associate sendables with the subsystem
-        //       such as SpeedControllers, Encoders, DigitalInputs, etc.
+        airCompressor = new Compressor(1);
+        airCompressor.start();
     }
 
     public void elevatorStart(){
-
+        solenoidElevator.set(true);
     }
 
     public void elevatorStop(){
-
+        solenoidElevator.set(false);
     }
 }
 

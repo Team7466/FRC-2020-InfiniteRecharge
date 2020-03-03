@@ -7,7 +7,7 @@ import team.cymrg.subsystems.subsysIntake;
 public class intakeStop extends CommandBase {
     private final subsysIntake subsysIntake = team.cymrg.subsystems.subsysIntake.getInstance();
 
-    public intakeStop() {
+    public intakeStop(team.cymrg.subsystems.subsysIntake subsysIntake) {
         // each subsystem used by the command must be passed into the addRequirements() method (which takes a vararg of Subsystem)
         addRequirements(this.subsysIntake);
     }

@@ -7,7 +7,7 @@ import team.cymrg.subsystems.*;
 public class elevatorStart extends CommandBase {
     private final subsysElevator subsysElevator = team.cymrg.subsystems.subsysElevator.getInstance();
 
-    public elevatorStart() {
+    public elevatorStart(team.cymrg.subsystems.subsysElevator subsysElevator) {
         // each subsystem used by the command must be passed into the addRequirements() method (which takes a vararg of Subsystem)
         addRequirements(this.subsysElevator);
     }

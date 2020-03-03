@@ -23,20 +23,29 @@ public class subsysShootgazin extends SubsystemBase {
         return INSTANCE;
     }
 
+    /* Intake motorunun çalışma hızı belirlendi
+       1.00  = Motor: 100%
+       0.75  = Motor: 75%
+       0.50  = Motor: 50%
+       0.25  = Motor: 25%
+       0.00  = Motor: 00%
+    */
+    // Motor değerleri kaptanın isteği üzerine yüzde 50 yapıldı
+
     private subsysShootgazin() {
 
     }
 
     public void shootgazinForward() {
-
+        redlineShootgazin.set(0.750);
     }
 
     public void shootgazinBackward() {
-
+        redlineShootgazin.set(-0.500);
     }
 
     public void shootgazinStop() {
-
+        redlineShootgazin.set(0.000);
     }
 }
 

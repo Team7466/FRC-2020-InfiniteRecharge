@@ -18,8 +18,8 @@ package team.cymrg;
 public final class Constants 
 {
     public static final class Controller {
-        public static final int controllerLogitech_1  = 0;
-        public static final int controllerLogitech_2  = 1;
+        public static final int controllerLogitech_1  = 2;
+        public static final int controllerLogitech_2  = 2;
         public static final int controllerXbox360     = 2;
     }
 

@@ -7,7 +7,7 @@ import team.cymrg.subsystems.subsysShootgazin;
 public class shootgazinForward extends CommandBase {
     private final subsysShootgazin subsysShootgazin = team.cymrg.subsystems.subsysShootgazin.getInstance();
 
-    public shootgazinForward() {
+    public shootgazinForward(team.cymrg.subsystems.subsysShootgazin subsysShootgazin) {
         // each subsystem used by the command must be passed into the addRequirements() method (which takes a vararg of Subsystem)
         addRequirements(this.subsysShootgazin);
     }
