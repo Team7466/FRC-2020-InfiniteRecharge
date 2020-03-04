@@ -39,7 +39,10 @@ public class Robot extends TimedRobot
     @Override public void autonomousPeriodic() { }
 
     @Override public void teleopInit() { }
-    @Override public void teleopPeriodic() { }
+    @Override public void teleopPeriodic() {
+        subsysDrivebase.Drive(RobotContainer.controllerXbox360.getRawAxis(1)     , RobotContainer.controllerXbox360.getRawAxis(3));
+        subsysDrivebase.Drive(RobotContainer.controllerLogitech_1.getRawAxis(1)  , RobotContainer.controllerLogitech_1.getRawAxis(3));
+    }
 
     @Override public void testInit() { CommandScheduler.getInstance().cancelAll(); }
     @Override public void testPeriodic() { }

@@ -1,7 +1,17 @@
 package team.cymrg.subsystems;
-
-
+import team.cymrg.Constants;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+// Ben burayı nasıl açıklıycam acaba neyse
+import edu.wpi.first.wpilibj.Encoder;
+/*
+ * 1 Mart 2020 Saat 00.30'dan beri Logitech'i test edicez diye kanser olduğumuzdan dolayı
+ * en bol kaynağı bulundurduğundan ve hiç bir kütüphane fark etmediğinden dolayı burada
+ * Victor kullandık değiştirmenize gerek yok ancak isterseniz tabii
+ */
+import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
+
 
 public class subsysDrivebase extends SubsystemBase {
     private static subsysDrivebase INSTANCE;
@@ -21,10 +31,37 @@ public class subsysDrivebase extends SubsystemBase {
     }
 
     private subsysDrivebase() {
-        // TODO: Set the default command, if any, for this subsystem by calling setDefaultCommand(command)
-        //       in the constructor or in the robot coordination class, such as RobotContainer.
-        //       Also, you can call addChild(name, sendableChild) to associate sendables with the subsystem
-        //       such as SpeedControllers, Encoders, DigitalInputs, etc.
+    }
+
+    // Sol taraf için driverlar
+    public static SpeedControllerGroup cymrgMotorLeft = new SpeedControllerGroup(
+            new Victor(Constants.Drive.portMotorLeftFront),
+            new Victor(Constants.Drive.portMotorLeftBack)
+    );
+    // Sağ taraf için driverlar
+    public static SpeedControllerGroup cymrgMotorRight = new SpeedControllerGroup(
+            new Victor(Constants.Drive.portMotorRightFront),
+            new Victor(Constants.Drive.portMotorRightBack)
+    );
+
+    private double scaleLeft(double left) { return 0.500 * left; }
+    private double scaleRight(double right) { return 0.500 * right; }
+
+    public void setMotors(double left, double right) {
+        left = scaleLeft(left);
+        right = scaleRight(right);
+
+        setMotorsRaw(left, right);
+    }
+
+    public void setMotorsRaw(double left, double right) {
+        cymrgMotorLeft.set(left);
+        cymrgMotorRight.set(right);
+    }
+
+    public static DifferentialDrive cymrgDrive = new DifferentialDrive(cymrgMotorLeft, cymrgMotorRight);
+    public void Drive(double fwd, double rot) {
+        cymrgDrive.tankDrive(fwd, -rot);
     }
 }
 

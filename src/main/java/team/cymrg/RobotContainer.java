@@ -20,9 +20,9 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 public class RobotContainer
 {
     //  Subsystems
-    private final subsysIntake          subsysIntake        = team.cymrg.subsystems.subsysIntake        .getInstance();
-    private final subsysElevator        subsysElevator      = team.cymrg.subsystems.subsysElevator      .getInstance();
-    private final subsysShootgazin      subsysShootgazin    = team.cymrg.subsystems.subsysShootgazin    .getInstance();
+        private final subsysIntake          subsysIntake        = team.cymrg.subsystems.subsysIntake        .getInstance();
+        private final subsysElevator        subsysElevator      = team.cymrg.subsystems.subsysElevator      .getInstance();
+        private final subsysShootgazin      subsysShootgazin    = team.cymrg.subsystems.subsysShootgazin    .getInstance();
 
     //  Controllers
         // For Test
