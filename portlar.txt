@@ -1,0 +1,9 @@
+sol ön motor 0
+sol arka motor 1
+sað ön motor 2
+sað arka motor 3
+
+intake1 4
+intake2 5
+
+magazin 6

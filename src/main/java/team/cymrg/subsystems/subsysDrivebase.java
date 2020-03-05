@@ -2,6 +2,9 @@ package team.cymrg.subsystems;
 import team.cymrg.Constants;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import com.ctre.phoenix.motorcontrol.can.*;
+import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.drive.*;
 // Ben burayı nasıl açıklıycam acaba neyse
 /*
  * 1 Mart 2020 Saat 00.30'dan beri Logitech'i test edicez diye kanser olduğumuzdan dolayı
@@ -29,22 +32,26 @@ public class subsysDrivebase extends SubsystemBase {
         return INSTANCE;
     }
 
-    private subsysDrivebase() {
-    }
+    private subsysDrivebase() { }
+
 
     // Sol taraf için driverlar
     public static SpeedControllerGroup cymrgMotorLeft = new SpeedControllerGroup(
-            new Victor(Constants.Drive.portMotorLeftFront),
-            new Victor(Constants.Drive.portMotorLeftBack)
+            new WPI_VictorSPX(Constants.Drive.portMotorLeftFront),
+            new WPI_VictorSPX(Constants.Drive.portMotorLeftBack)
     );
     // Sağ taraf için driverlar
     public static SpeedControllerGroup cymrgMotorRight = new SpeedControllerGroup(
-            new Victor(Constants.Drive.portMotorRightFront),
-            new Victor(Constants.Drive.portMotorRightBack)
+            new WPI_VictorSPX(Constants.Drive.portMotorRightFront),
+            new WPI_VictorSPX(Constants.Drive.portMotorRightBack)
     );
+
+
 
     private double scaleLeft(double left) { return 0.250 * left; }
     private double scaleRight(double right) { return 0.250 * right; }
+
+
 
     public void setMotors(double left, double right) {
         left = scaleLeft(left);

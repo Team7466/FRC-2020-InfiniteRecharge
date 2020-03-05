@@ -1,12 +1,15 @@
 package team.cymrg.subsystems;
-import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import com.ctre.phoenix.motorcontrol.can.*;
+import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.drive.*;
 
 import team.cymrg.Constants;
 
 public class subsysIntake extends SubsystemBase {
     private static subsysIntake INSTANCE;
-    private Victor redlineIntake = new Victor(Constants.Systems.port_Intake);
+    private WPI_VictorSPX redlineIntake_1 = new WPI_VictorSPX(Constants.Systems.port_Intake1);
+    private WPI_VictorSPX redlineIntake_2 = new WPI_VictorSPX(Constants.Systems.port_Intake2);
 
     public static subsysIntake getInstance() {
         // Fast (non-synchronized) check to reduce overhead of acquiring a lock when it's not needed
@@ -30,11 +33,13 @@ public class subsysIntake extends SubsystemBase {
     }
 
     public void intakeStart(){
-        redlineIntake.set(0.750);
+        redlineIntake_1.set(0.750);
+        redlineIntake_2.set(0.750);
     }
 
     public void intakeStop(){
-        redlineIntake.set(0.000);
+        redlineIntake_1.set(0.000);
+        redlineIntake_2.set(0.000);
     }
 }
 
