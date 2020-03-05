@@ -18,13 +18,12 @@ package team.cymrg;
 public final class Constants 
 {
     public static final class Controller {
-        public static final int controllerLogitech_1  = 0;
-        public static final int controllerLogitech_2  = 1;
-        public static final int controllerXbox360     = 2;
+        public static final int controllerLogitech    = 1;
+        public static final int controllerXbox360     = 0;
     }
 
     public static final class Systems {
-        public static final int port_Solenoid     = 3;
+        public static final int port_Solenoid     = 1;
         public static final int port_Intake1      = 4;
         public static final int port_Intake2      = 5;
         public static final int port_Shootgazin   = 6;
@@ -33,10 +32,11 @@ public final class Constants
 
     public static final class Drive {
         // Motor Portlarının Belirtilmesi
-        public static final int portMotorLeftFront  = 7;
-        public static final int portMotorLeftBack   = 8;
-        public static final int portMotorRightFront = 9;
-        public static final int portMotorRightBack  = 10;
+        public static final int portMotorLeftFront  = 0;
+        public static final int portMotorLeftBack   = 1;
+        public static final int portMotorRightFront = 2;
+        public static final int portMotorRightBack  = 3;
+        ;
 
         public static final int kEncoderCPR = 1024;
         public static final double kWheelDiameterInches = 6;

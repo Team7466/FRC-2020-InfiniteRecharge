@@ -7,6 +7,7 @@
 
 package team.cymrg;
 import team.cymrg.subsystems.*;
+import edu.wpi.first.wpilibj.Compressor;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
@@ -23,6 +24,7 @@ public class Robot extends TimedRobot
     @Override
     public void robotInit()
     {
+        new Compressor().start();
         robotContainer = new RobotContainer();
         subsysDrivebase     = team.cymrg.subsystems.subsysDrivebase     .getInstance();
         subsysElevator      = team.cymrg.subsystems.subsysElevator      .getInstance();
@@ -31,7 +33,7 @@ public class Robot extends TimedRobot
     }
 
     @Override
-    public void robotPeriodic() { CommandScheduler.getInstance().run(); }
+    public void robotPeriodic() { CommandScheduler.getInstance().run();}
     @Override public void disabledInit() { }
     @Override public void disabledPeriodic() { }
 
@@ -40,8 +42,8 @@ public class Robot extends TimedRobot
 
     @Override public void teleopInit() { }
     @Override public void teleopPeriodic() {
-        subsysDrivebase.Drive(RobotContainer.controllerXbox360.getRawAxis(1)     , RobotContainer.controllerXbox360.getRawAxis(3));
-        subsysDrivebase.Drive(RobotContainer.controllerLogitech_1.getRawAxis(1)  , RobotContainer.controllerLogitech_1.getRawAxis(3));
+        //subsysDrivebase.Drive(RobotContainer.controllerXbox360.getRawAxis(1)     , RobotContainer.controllerXbox360.getRawAxis(3));
+        subsysDrivebase.Drive(RobotContainer.controllerLogitech.getRawAxis(1)  , RobotContainer.controllerLogitech.getRawAxis(3));
     }
 
     @Override public void testInit() { CommandScheduler.getInstance().cancelAll(); }

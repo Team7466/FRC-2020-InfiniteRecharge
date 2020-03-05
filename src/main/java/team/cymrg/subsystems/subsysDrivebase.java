@@ -3,15 +3,14 @@ import team.cymrg.Constants;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.ctre.phoenix.motorcontrol.can.*;
-import edu.wpi.first.wpilibj.*;
-import edu.wpi.first.wpilibj.drive.*;
+
 // Ben burayı nasıl açıklıycam acaba neyse
 /*
  * 1 Mart 2020 Saat 00.30'dan beri Logitech'i test edicez diye kanser olduğumuzdan dolayı
  * en bol kaynağı bulundurduğundan ve hiç bir kütüphane fark etmediğinden dolayı burada
  * Victor kullandık değiştirmenize gerek yok ancak isterseniz tabii
  */
-import edu.wpi.first.wpilibj.Victor;
+
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 
 

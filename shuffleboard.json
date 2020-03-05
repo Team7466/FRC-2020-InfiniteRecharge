@@ -34,9 +34,6 @@
               "_source0": "network_table:///LiveWindow/Ungrouped/DifferentialDrive[1]/Right Motor Speed",
               "_title": "Sağ Motor",
               "Graph/Visible time": 30.0,
-              "Y-axis/Automatic bounds": true,
-              "Y-axis/Upper bound": 1.0,
-              "Y-axis/Lower bound": -1.0,
               "Visible data/LiveWindow/Ungrouped/DifferentialDrive[1]/Right Motor Speed": true
             }
           },
@@ -50,9 +47,6 @@
               "_source0": "network_table:///LiveWindow/Ungrouped/DifferentialDrive[1]/Left Motor Speed",
               "_title": "Sol Motor",
               "Graph/Visible time": 30.0,
-              "Y-axis/Automatic bounds": true,
-              "Y-axis/Upper bound": 1.0,
-              "Y-axis/Lower bound": -1.0,
               "Visible data/LiveWindow/Ungrouped/DifferentialDrive[1]/Left Motor Speed": true
             }
           },
@@ -68,7 +62,7 @@
               "Range/Min": -1.0,
               "Range/Max": 1.0,
               "Range/Center": 0.0,
-              "Visuals/Num tick marks": 5,
+              "Visuals/Num tick marks": 5.0,
               "Visuals/Show text": true
             }
           },
@@ -84,7 +78,7 @@
               "Range/Min": -1.0,
               "Range/Max": 1.0,
               "Range/Center": 0.0,
-              "Visuals/Num tick marks": 5,
+              "Visuals/Num tick marks": 5.0,
               "Visuals/Show text": true
             }
           },
@@ -100,8 +94,32 @@
               "Range/Min": -1.0,
               "Range/Max": 1.0,
               "Range/Center": 0.0,
-              "Visuals/Num tick marks": 5,
+              "Visuals/Num tick marks": 5.0,
               "Visuals/Show text": true
+            }
+          },
+          "6,0": {
+            "size": [
+              3,
+              2
+            ],
+            "content": {
+              "_type": "Network Table Tree",
+              "_source0": "network_table:///LiveWindow/Ungrouped/Compressor[1]",
+              "_title": "/LiveWindow/Ungrouped/Compressor[1]"
+            }
+          },
+          "6,2": {
+            "size": [
+              3,
+              1
+            ],
+            "content": {
+              "_type": "Boolean Box",
+              "_source0": "network_table:///LiveWindow/Ungrouped/Solenoid[0,1]/Value",
+              "_title": "LiveWindow/Ungrouped/Solenoid[0,1]/Value",
+              "Colors/Color when true": "#7CFC00FF",
+              "Colors/Color when false": "#8B0000FF"
             }
           },
           "4,3": {
@@ -110,9 +128,24 @@
               1
             ],
             "content": {
-              "_type": "Network Table Tree",
-              "_source0": "network_table:///LiveWindow/Ungrouped/Solenoid[0,3]",
-              "_title": "Piston"
+              "_type": "Boolean Box",
+              "_source0": "network_table:///LiveWindow/Ungrouped/Compressor[0]/Enabled",
+              "_title": "/LiveWindow/Ungrouped/Compressor[0]/Enabled",
+              "Colors/Color when true": "#7CFC00FF",
+              "Colors/Color when false": "#8B0000FF"
+            }
+          },
+          "6,3": {
+            "size": [
+              2,
+              1
+            ],
+            "content": {
+              "_type": "Boolean Box",
+              "_source0": "network_table:///LiveWindow/Ungrouped/Compressor[0]/Pressure switch",
+              "_title": "/LiveWindow/Ungrouped/Compressor[0]/Pressure switch",
+              "Colors/Color when true": "#7CFC00FF",
+              "Colors/Color when false": "#8B0000FF"
             }
           }
         }
@@ -120,9 +153,9 @@
     }
   ],
   "windowGeometry": {
-    "x": 1912.0,
+    "x": -8.0,
     "y": -8.0,
-    "width": 1936.0,
-    "height": 1066.0
+    "width": 1382.0,
+    "height": 754.0
   }
 }

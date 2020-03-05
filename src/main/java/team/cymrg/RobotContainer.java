@@ -26,10 +26,9 @@ public class RobotContainer
 
     //  Controllers
         // For Test
-        public static XboxController    controllerXbox360       = new XboxController(Constants.Controller.controllerXbox360);
+        public static XboxController    controllerXbox360       = new XboxController(Constants.Controller.controllerXbox360); // Aksamlar
         // For Real
-        public static Joystick          controllerLogitech_1    = new Joystick(Constants.Controller.controllerLogitech_1);   // Motorlar
-        public static Joystick          controllerLogitech_2    = new Joystick(Constants.Controller.controllerLogitech_2);   // Mekanik Aksamlar
+        public static Joystick          controllerLogitech    = new Joystick(Constants.Controller.controllerLogitech);   // Motorlar
 
     //  Commands
         //Intake
@@ -46,8 +45,8 @@ public class RobotContainer
 
     public RobotContainer()
     {
-        // Xbox360 P2                   Logitech F310                     //P1 Logitech F310   P0
-        /*configureButton_Xbox();*/     configureButton_Logitech2();      //configureButton_Logitech1();
+        // Xbox360 P2
+        configureButton_Xbox();
     }
 
     private void configureButton_Xbox()
@@ -72,35 +71,6 @@ public class RobotContainer
         // Shootgazin: Stop       - RB Tuşu - Bırakıldı
         Button X6_R = new JoystickButton(controllerXbox360, 6); X6_R.whenReleased(shootgazinStop);
         
-    }
-
-    private void configureButton_Logitech1() {
-        // Elevator: Start   - LB Tuşu
-        Button L5 = new JoystickButton(controllerLogitech_1, 5); L5.whenPressed(elevatorStart);
-        // Elevator: Start   - RB Tuşu
-        Button L6 = new JoystickButton(controllerLogitech_1, 6); L6.whenReleased(elevatorStop);
-    }
-
-    private void configureButton_Logitech2() {
-        // Intake: Çalıştır - A Tuşu
-        Button L2 = new JoystickButton(controllerLogitech_2, 2); L2.whenPressed(intakeStart);
-        // Intake: Durdur   - B Tuşu
-        Button L3 = new JoystickButton(controllerLogitech_2, 3); L3.whenPressed(intakeStop);
-
-        // Elevator Start    - X Tuşu
-        Button L1 = new JoystickButton(controllerLogitech_2, 1); L1.whenPressed(elevatorStart);
-        // Elevator Stop     - Y Tuşu
-        Button L4 = new JoystickButton(controllerLogitech_2, 4); L4.whenPressed(elevatorStop);
-
-        // Shootgazin: Forward   - RB Tuşu - Basılı
-        Button L5_H = new JoystickButton(controllerLogitech_2, 5); L5_H.whenHeld(shootgazinForward);
-        // Shootgazin: Stop      - RB Tuşu - Bırakıldı
-        Button L5_R = new JoystickButton(controllerLogitech_2, 5); L5_R.whenReleased(shootgazinStop);
-
-        // Shootgazin: Backward   - RB Tuşu - Basılı
-        Button L6_H = new JoystickButton(controllerLogitech_2, 6); L6_H.whenHeld(shootgazinBackward);
-        // Shootgazin: Stop       - RB Tuşu - Bırakıldı
-        Button L6_R = new JoystickButton(controllerLogitech_2, 6); L6_R.whenReleased(shootgazinStop);
     }
 
 }
