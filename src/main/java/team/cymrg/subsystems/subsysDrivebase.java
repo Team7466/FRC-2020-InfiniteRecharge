@@ -3,7 +3,6 @@ import team.cymrg.Constants;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 // Ben burayı nasıl açıklıycam acaba neyse
-import edu.wpi.first.wpilibj.Encoder;
 /*
  * 1 Mart 2020 Saat 00.30'dan beri Logitech'i test edicez diye kanser olduğumuzdan dolayı
  * en bol kaynağı bulundurduğundan ve hiç bir kütüphane fark etmediğinden dolayı burada
@@ -44,8 +43,8 @@ public class subsysDrivebase extends SubsystemBase {
             new Victor(Constants.Drive.portMotorRightBack)
     );
 
-    private double scaleLeft(double left) { return 0.500 * left; }
-    private double scaleRight(double right) { return 0.500 * right; }
+    private double scaleLeft(double left) { return 0.250 * left; }
+    private double scaleRight(double right) { return 0.250 * right; }
 
     public void setMotors(double left, double right) {
         left = scaleLeft(left);
@@ -61,7 +60,7 @@ public class subsysDrivebase extends SubsystemBase {
 
     public static DifferentialDrive cymrgDrive = new DifferentialDrive(cymrgMotorLeft, cymrgMotorRight);
     public void Drive(double fwd, double rot) {
-        cymrgDrive.tankDrive(fwd, -rot);
+        cymrgDrive.tankDrive(-fwd, -rot);
     }
 }
 

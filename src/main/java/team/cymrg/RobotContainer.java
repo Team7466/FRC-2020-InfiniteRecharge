@@ -46,8 +46,8 @@ public class RobotContainer
 
     public RobotContainer()
     {
-        // Xbox360 P2               //Logitech F310   P0                Logitech F310   P1
-        configureButton_Xbox();     //configureButton_Logitech1();      configureButton_Logitech2();
+        // Xbox360 P2                   Logitech F310                     //P1 Logitech F310   P0
+        /*configureButton_Xbox();*/     configureButton_Logitech2();      //configureButton_Logitech1();
     }
 
     private void configureButton_Xbox()
