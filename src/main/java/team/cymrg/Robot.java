@@ -6,15 +6,16 @@
 /*----------------------------------------------------------------------------*/
 
 package team.cymrg;
-import team.cymrg.subsystems.*;
-import edu.wpi.first.wpilibj.Compressor;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import team.cymrg.subsystems.*;
 
 public class Robot extends TimedRobot
 {
-    private RobotContainer robotContainer;
+    private RobotContainer robotContainer
+    ;    
 
     public static subsysDrivebase   subsysDrivebase     = null;
     public static subsysElevator    subsysElevator      = null;
@@ -24,26 +25,40 @@ public class Robot extends TimedRobot
     @Override
     public void robotInit()
     {
-        new Compressor().start();
         robotContainer = new RobotContainer();
         subsysDrivebase     = team.cymrg.subsystems.subsysDrivebase     .getInstance();
         subsysElevator      = team.cymrg.subsystems.subsysElevator      .getInstance();
         subsysIntake        = team.cymrg.subsystems.subsysIntake        .getInstance();
         subsysShootgazin    = team.cymrg.subsystems.subsysShootgazin    .getInstance();
+
+
+        subsysElevator.airComp.clearAllPCMStickyFaults();
+        subsysElevator.airComp.setClosedLoopControl(true);
+        subsysElevator.airComp.start();
     }
 
     @Override
-    public void robotPeriodic() { CommandScheduler.getInstance().run();}
+    public void robotPeriodic() { 
+        CommandScheduler.getInstance().run();
+
+        SmartDashboard.putBoolean("SwitchP", subsysElevator.airComp.getPressureSwitchValue());
+        SmartDashboard.putBoolean("getClosedLoopControl", subsysElevator.airComp.getClosedLoopControl());
+        SmartDashboard.putBoolean("getCompressorNotConnectedFault", subsysElevator.airComp.getCompressorNotConnectedFault());
+        SmartDashboard.putBoolean("getCompressorShortedFault", subsysElevator.airComp.getCompressorShortedFault());
+        SmartDashboard.putBoolean("getCompressorCurrentTooHighFault", subsysElevator.airComp.getCompressorCurrentTooHighFault());
+    }
     @Override public void disabledInit() { }
     @Override public void disabledPeriodic() { }
 
     @Override public void autonomousInit() { }
     @Override public void autonomousPeriodic() { }
 
-    @Override public void teleopInit() { }
+    @Override public void teleopInit() {
+        subsysElevator.airComp.start();
+    }
     @Override public void teleopPeriodic() {
-        //subsysDrivebase.Drive(RobotContainer.controllerXbox360.getRawAxis(1)     , RobotContainer.controllerXbox360.getRawAxis(3));
-        subsysDrivebase.Drive(RobotContainer.controllerLogitech.getRawAxis(1)  , RobotContainer.controllerLogitech.getRawAxis(3));
+        subsysDrivebase.Drive(RobotContainer.controllerXbox360.getRawAxis(1)     , RobotContainer.controllerXbox360.getRawAxis(5));
+        //subsysDrivebase.Drive(RobotContainer.controllerLogitech.getRawAxis(1)  , RobotContainer.controllerLogitech.getRawAxis(3));
     }
 
     @Override public void testInit() { CommandScheduler.getInstance().cancelAll(); }

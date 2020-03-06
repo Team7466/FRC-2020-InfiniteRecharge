@@ -1,15 +1,15 @@
-package team.cymrg.commands.shootgazin;
+package team.cymrg.commands.intake;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import team.cymrg.subsystems.subsysShootgazin;
+import team.cymrg.subsystems.subsysIntake;
 
 
-public class shootgazinForward extends CommandBase {
-    private final subsysShootgazin subsysShootgazin = team.cymrg.subsystems.subsysShootgazin.getInstance();
+public class intakeBackward extends CommandBase {
+    private final subsysIntake subsysIntake = team.cymrg.subsystems.subsysIntake.getInstance();
 
-    public shootgazinForward(team.cymrg.subsystems.subsysShootgazin subsysShootgazin) {
+    public intakeBackward(team.cymrg.subsystems.subsysIntake subsysIntake) {
         // each subsystem used by the command must be passed into the addRequirements() method (which takes a vararg of Subsystem)
-        addRequirements(this.subsysShootgazin);
+        addRequirements(this.subsysIntake);
     }
 
     @Override
@@ -19,7 +19,7 @@ public class shootgazinForward extends CommandBase {
 
     @Override
     public void execute() {
-        subsysShootgazin.shootgazinForward();
+        subsysIntake.intakeBackward();
     }
 
     @Override

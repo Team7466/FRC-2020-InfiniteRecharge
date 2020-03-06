@@ -6,6 +6,7 @@ import team.cymrg.Constants;
 
 public class subsysIntake extends SubsystemBase {
     private static subsysIntake INSTANCE;
+    public  WPI_VictorSPX redlineShootgazin = new WPI_VictorSPX(Constants.Systems.port_Shootgazin);
     private WPI_VictorSPX redlineIntake_1 = new WPI_VictorSPX(Constants.Systems.port_Intake1);
     private WPI_VictorSPX redlineIntake_2 = new WPI_VictorSPX(Constants.Systems.port_Intake2);
 
@@ -24,20 +25,38 @@ public class subsysIntake extends SubsystemBase {
     }
 
     private subsysIntake() {
-        // TODO: Set the default command, if any, for this subsystem by calling setDefaultCommand(command)
+        // Set the default command, if any, for this subsystem by calling setDefaultCommand(command)
         //       in the constructor or in the robot coordination class, such as RobotContainer.
         //       Also, you can call addChild(name, sendableChild) to associate sendables with the subsystem
         //       such as SpeedControllers, Encoders, DigitalInputs, etc.
     }
 
     public void intakeStart(){
-        redlineIntake_1.set(0.750);
-        redlineIntake_2.set(0.750);
+        redlineIntake_1.set(0.500);
+        redlineIntake_2.set(0.500);
+    }
+
+    public void intakeBackward(){
+        redlineIntake_1.set(-0.500);
+        redlineIntake_2.set(-0.500);
     }
 
     public void intakeStop(){
         redlineIntake_1.set(0.000);
         redlineIntake_2.set(0.000);
+    }
+
+    public void getThe_ball(){
+        redlineIntake_1.set(0.550);
+        redlineIntake_2.set(0.550);
+        redlineShootgazin.set(0.600);
+
+    }
+
+    public void stop_ball(){
+        redlineIntake_1.set(0);
+        redlineIntake_2.set(0);
+        redlineShootgazin.set(0);
     }
 }
 

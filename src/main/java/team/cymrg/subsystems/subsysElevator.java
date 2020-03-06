@@ -1,4 +1,5 @@
 package team.cymrg.subsystems;
+import edu.wpi.first.wpilibj.Compressor;
 import team.cymrg.Constants;
 import edu.wpi.first.wpilibj.Solenoid;
 
@@ -9,6 +10,7 @@ public class subsysElevator extends SubsystemBase {
     private static subsysElevator INSTANCE;
     
     public static  Solenoid solenoidElevator = new Solenoid(Constants.Systems.port_Solenoid);
+    public Compressor airComp = new Compressor();
 
     public static subsysElevator getInstance() {
         // Fast (non-synchronized) check to reduce overhead of acquiring a lock when it's not needed
@@ -25,6 +27,7 @@ public class subsysElevator extends SubsystemBase {
     }
 
     private subsysElevator() {
+        airComp.setClosedLoopControl(true);
     }
 
     public void elevatorStart(){
@@ -33,6 +36,10 @@ public class subsysElevator extends SubsystemBase {
 
     public void elevatorStop(){
         solenoidElevator.set(false);
+    }
+
+    public void runCompress(){
+
     }
 }
 

@@ -7,7 +7,7 @@ public class subsysShootgazin extends SubsystemBase {
     private static subsysShootgazin INSTANCE;
 
     // Değişkenlerin Tanımlanması
-    private WPI_VictorSPX redlineShootgazin = new WPI_VictorSPX(Constants.Systems.port_Shootgazin);
+    public WPI_VictorSPX redlineShootgazin = new WPI_VictorSPX(Constants.Systems.port_Shootgazin);
 
     public static subsysShootgazin getInstance() {
         // Fast (non-synchronized) check to reduce overhead of acquiring a lock when it's not needed
@@ -37,7 +37,7 @@ public class subsysShootgazin extends SubsystemBase {
     }
 
     public void shootgazinForward() {
-        redlineShootgazin.set(0.750);
+        redlineShootgazin.set(0.500);
     }
 
     public void shootgazinBackward() {

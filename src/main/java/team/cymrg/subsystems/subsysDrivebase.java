@@ -47,8 +47,8 @@ public class subsysDrivebase extends SubsystemBase {
 
 
 
-    private double scaleLeft(double left) { return 0.250 * left; }
-    private double scaleRight(double right) { return 0.250 * right; }
+    private double scaleLeft(double left) { return 0.2 * left; }
+    private double scaleRight(double right) { return 0.2 * right; }
 
 
 
