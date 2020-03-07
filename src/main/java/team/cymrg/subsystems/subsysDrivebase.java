@@ -66,7 +66,7 @@ public class subsysDrivebase extends SubsystemBase {
 
     public static DifferentialDrive cymrgDrive = new DifferentialDrive(cymrgMotorLeft, cymrgMotorRight);
     public void Drive(double fwd, double rot) {
-        cymrgDrive.tankDrive(-fwd, -rot);
+        cymrgDrive.tankDrive(rot, fwd);
     }
 }
 

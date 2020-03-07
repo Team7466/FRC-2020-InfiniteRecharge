@@ -37,7 +37,7 @@ public class subsysShootgazin extends SubsystemBase {
     }
 
     public void shootgazinForward() {
-        redlineShootgazin.set(0.500);
+        redlineShootgazin.set(0.700);
     }
 
     public void shootgazinBackward() {

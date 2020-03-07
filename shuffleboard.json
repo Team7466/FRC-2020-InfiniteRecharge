@@ -119,31 +119,29 @@
           },
           "8,0": {
             "size": [
-              1,
-              1
+              2,
+              2
             ],
             "content": {
-              "_type": "Boolean Box",
-              "_source0": "network_table:///SmartDashboard/getCompressorShortedFault",
-              "_title": "getCompressorShortedFault",
-              "Colors/Color when true": "#7CFC00FF",
-              "Colors/Color when false": "#8B0000FF"
+              "_type": "Network Table Tree",
+              "_source0": "network_table:///LiveWindow/Ungrouped/Compressor[0]",
+              "_title": "LiveWindow/Ungrouped/Compressor[0]"
             }
           },
-          "9,0": {
+          "8,2": {
             "size": [
               1,
               1
             ],
             "content": {
               "_type": "Boolean Box",
-              "_source0": "network_table:///SmartDashboard/getCompressorNotConnectedFault",
-              "_title": "getCompressorNotConnectedFault",
+              "_source0": "network_table:///SmartDashboard/SwitchP",
+              "_title": "SwitchP",
               "Colors/Color when true": "#7CFC00FF",
               "Colors/Color when false": "#8B0000FF"
             }
           },
-          "8,1": {
+          "9,2": {
             "size": [
               1,
               1
@@ -156,28 +154,28 @@
               "Colors/Color when false": "#8B0000FF"
             }
           },
-          "9,1": {
+          "8,3": {
             "size": [
               1,
               1
             ],
             "content": {
               "_type": "Boolean Box",
-              "_source0": "network_table:///SmartDashboard/getCompressorCurrentTooHighFault",
-              "_title": "getCompressorCurrentTooHighFault",
+              "_source0": "network_table:///SmartDashboard/getCompressorNotConnectedFault",
+              "_title": "getCompressorNotConnectedFault",
               "Colors/Color when true": "#7CFC00FF",
               "Colors/Color when false": "#8B0000FF"
             }
           },
-          "8,2": {
+          "9,3": {
             "size": [
               1,
               1
             ],
             "content": {
               "_type": "Boolean Box",
-              "_source0": "network_table:///SmartDashboard/SwitchP",
-              "_title": "SwitchP",
+              "_source0": "network_table:///SmartDashboard/getCompressorShortedFault",
+              "_title": "getCompressorShortedFault",
               "Colors/Color when true": "#7CFC00FF",
               "Colors/Color when false": "#8B0000FF"
             }

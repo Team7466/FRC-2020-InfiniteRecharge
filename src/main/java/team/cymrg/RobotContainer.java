@@ -10,6 +10,7 @@ import team.cymrg.subsystems.*;
 import team.cymrg.commands.intake.*;
 import team.cymrg.commands.elevator.*;
 import team.cymrg.commands.shootgazin.*;
+import team.cymrg.commands.*;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
@@ -44,6 +45,8 @@ public class RobotContainer
         private final shootgazinBackward     shootgazinBackward  = new shootgazinBackward      (subsysShootgazin);
         private final shootgazinForward      shootgazinForward   = new shootgazinForward       (subsysShootgazin);
         private final shootgazinStop         shootgazinStop      = new shootgazinStop          (subsysShootgazin);
+        //
+        private final AutonomCommand autonomousCommand = new AutonomCommand();
 
 
     public RobotContainer()
@@ -88,6 +91,9 @@ public class RobotContainer
         // Shootgazin: Stop       - RB Tuşu - Bırakıldı
         Button X8_R = new JoystickButton(controllerLogitech, 8); X8_R.whenReleased(shootgazinStop);
         
+    }
+    public AutonomCommand getAutonom(){
+            return autonomousCommand;
     }
 
 }

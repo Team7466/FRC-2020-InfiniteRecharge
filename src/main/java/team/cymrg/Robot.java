@@ -1,4 +1,4 @@
- /*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
 /* Copyright (c) 2017-2019 FIRST. All Rights Reserved.                        */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */
 /* must be accompanied by the FIRST BSD license file in the root directory of */
@@ -11,16 +11,18 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.cymrg.subsystems.*;
+import edu.wpi.first.wpilibj.Timer;
 
 public class Robot extends TimedRobot
 {
-    private RobotContainer robotContainer
-    ;    
+    private RobotContainer robotContainer;    
 
     public static subsysDrivebase   subsysDrivebase     = null;
     public static subsysElevator    subsysElevator      = null;
     public static subsysIntake      subsysIntake        = null;
     public static subsysShootgazin  subsysShootgazin    = null;
+
+    private static Timer timer = new Timer();
 
     @Override
     public void robotInit()
@@ -50,10 +52,16 @@ public class Robot extends TimedRobot
     @Override public void disabledInit() { }
     @Override public void disabledPeriodic() { }
 
-    @Override public void autonomousInit() { }
-    @Override public void autonomousPeriodic() { }
+    @Override public void autonomousInit() { 
+        if(robotContainer.getAutonom() != null){
+            robotContainer.getAutonom().schedule();
+        }
+    }
+    @Override public void autonomousPeriodic() {
+    }
 
     @Override public void teleopInit() {
+        robotContainer.getAutonom().cancel();
         subsysElevator.airComp.start();
     }
     @Override public void teleopPeriodic() {

@@ -49,7 +49,7 @@ public class subsysIntake extends SubsystemBase {
     public void getThe_ball(){
         redlineIntake_1.set(0.550);
         redlineIntake_2.set(0.550);
-        redlineShootgazin.set(0.600);
+        redlineShootgazin.set(0.700);
 
     }
 
