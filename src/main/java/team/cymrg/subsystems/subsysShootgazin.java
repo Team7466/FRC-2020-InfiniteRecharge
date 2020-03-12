@@ -30,11 +30,7 @@ public class subsysShootgazin extends SubsystemBase {
        0.25  = Motor: 25%
        0.00  = Motor: 00%
     */
-    // Motor değerleri kaptanın isteği üzerine yüzde 50 yapıldı
-
-    private subsysShootgazin() {
-
-    }
+    private subsysShootgazin() { }
 
     public void shootgazinForward() {
         redlineShootgazin.set(0.700);

@@ -13,9 +13,6 @@ import team.cymrg.subsystems.subsysDrivebase;
 import team.cymrg.subsystems.subsysShootgazin;
 import edu.wpi.first.wpilibj.Timer;
 
-/**
- * An example command that uses an example subsystem.
- */
 public class AutonomCommand extends CommandBase
 {
     private final Timer timer = new Timer();
@@ -23,12 +20,7 @@ public class AutonomCommand extends CommandBase
     private final subsysDrivebase m_drive;
     private final subsysShootgazin m_mag;
     boolean situation;
-    
-    /**
-     * Creates a new ExampleCommand.
-     *
-     * @param subsystem The subsystem used by this command.
-     */
+
     public AutonomCommand()
     {
         m_sensor = MesafeSensor.getInstance();

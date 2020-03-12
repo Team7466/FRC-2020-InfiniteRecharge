@@ -26,9 +26,7 @@ public class RobotContainer
         private final subsysShootgazin      subsysShootgazin    = team.cymrg.subsystems.subsysShootgazin    .getInstance();
 
     //  Controllers
-        // For Test
         public static XboxController    controllerXbox360       = new XboxController(Constants.Controller.controllerXbox360); // Aksamlar
-        // For Real
         public static Joystick          controllerLogitech    = new Joystick(Constants.Controller.controllerLogitech);   // Motorlar
 
     //  Commands
