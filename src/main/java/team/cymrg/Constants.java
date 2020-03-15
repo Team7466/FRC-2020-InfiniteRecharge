@@ -28,7 +28,6 @@ public final class Constants
         public static final int portMotorLeftBack   = 1;
         public static final int portMotorRightFront = 2;
         public static final int portMotorRightBack  = 3;
-        ;
 
         public static final int kEncoderCPR = 1024;
         public static final double kWheelDiameterInches = 6;
